@@ -1,0 +1,6 @@
+cloudscraper==1.2.67
+certifi==2022.12.7
+requests==2.27.1
+impacket==0.10.0
+pyasn1==0.4.8
+yarl~=1.8.1
