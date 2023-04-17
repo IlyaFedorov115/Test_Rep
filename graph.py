@@ -142,3 +142,17 @@ class Graph():
 
         plt.savefig(os.getcwd()+'/outs/graph.png', dpi=600)
         plt.show()
+
+def extract_bps(s):
+    bps_start = s.find('BPS: ') + 5
+    bps_end = s.find(' ', bps_start)
+    bps_str = s[bps_start:bps_end]
+    
+    bps_value = float(bps_str) if bps_str != '--' else 0
+    
+    bps_type_start = bps_end + 1
+    bps_type_end = s.find(' ', bps_type_start)
+    bps_type = s[bps_type_start:bps_type_end]
+    
+    return bps_value, bps_type
+
