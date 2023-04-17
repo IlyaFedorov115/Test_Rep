@@ -173,3 +173,25 @@ def extract_bps(string):
                 elif unit == 'GB':
                     return float(value) * 1024
     return None
+
+def get_bps_in_mb(s):
+    bps_start = s.find("BPS: ")
+    if bps_start == -1:
+        return None
+    bps_end = s.find(" ", bps_start+len("BPS: "))
+
+    bps_str = s[bps_start+len("BPS: "):bps_end]
+    if bps_str == "--":
+        bps_mb = 0.0
+    else:
+        bps_val = float(bps_str[:-1])
+        bps_unit = bps_str[-1]
+        if bps_unit == "B":
+            bps_mb = bps_val / 1024 / 1024
+        elif bps_unit == "k":
+            bps_mb = bps_val / 1024
+        elif bps_unit == "M":
+            bps_mb = bps_val
+        elif bps_unit == "G":
+            bps_mb = bps_val * 1024
+    return bps_mb
