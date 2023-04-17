@@ -272,6 +272,7 @@ def get_pps(string):
     while end_index < len(string) and string[end_index].isdigit() or string[end_index] == ".":
         end_index += 1
     # Извлекаем значение PPS из строки
+    print(pps_value)
     pps_value = string[start_index:end_index]
     # Конвертируем PPS в число
     print(pps_value)
