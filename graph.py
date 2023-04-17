@@ -226,3 +226,19 @@ def get_bps_in_mb(s):
 [04:39:49 - DEBUG] Target: 192.168.56.77, Port: 443, Method: GET, PPS: 780.30k, BPS: 1.30 GB / 6%
 Напиши функцию, которая вернет значение BPS в MB. На примерах строк видно, что если "--", то это 0. Также видно, что BPS может быть представлен в разных форматах. Но вернуть надо в MB. Размер которые могут встречаться: "B", "kB", "MB", "GB".
 
+    
+def get_bps_in_mb(log_str):
+    bps_str = log_str.split(", ")[-1].split(": ")[-1]
+    if bps_str == "-- B / 6%":
+        return 0
+    bps_val, bps_unit = bps_str.split()
+    bps_val = float(bps_val)
+    if bps_unit == "kB":
+        bps_val /= 1024
+    elif bps_unit == "GB":
+        bps_val *= 1024
+    elif bps_unit != "MB":
+        raise ValueError("Unexpected BPS unit: {}".format(bps_unit))
+    return bps_val
+
+
