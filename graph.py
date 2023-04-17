@@ -195,3 +195,33 @@ def get_bps_in_mb(s):
         elif bps_unit == "G":
             bps_mb = bps_val * 1024
     return bps_mb
+
+
+def get_bps_in_mb(s):
+    bps_start = s.find("BPS: ")
+    if bps_start == -1:
+        return None
+    bps_end = s.find(" ", bps_start+len("BPS: "))
+    bps_mb = 0.0
+    bps_str = s[bps_start+len("BPS: "):bps_end]
+    if bps_str == "--":
+        bps_mb = 0.0
+    else:
+        bps_val = float(bps_str[:-1])
+        bps_unit = bps_str[-1]
+        if bps_unit == "B":
+            bps_mb = bps_val / 1024 / 1024
+        elif bps_unit == "kB":
+            bps_mb = bps_val / 1024
+        elif bps_unit == "MB":
+            bps_mb = bps_val
+        elif bps_unit == "GB":
+            bps_mb = bps_val * 1024
+    return bps_mb
+
+Смотри, на вход функции будут подаваться строка (ниже три примера):
+[04:39:49 - DEBUG] Target: 192.168.56.77, Port: 443, Method: GET, PPS: 780.30k, BPS: -- B / 6%
+[04:39:49 - DEBUG] Target: 192.168.56.77, Port: 443, Method: GET, PPS: 780.30k, BPS: 518.03 MB / 6%
+[04:39:49 - DEBUG] Target: 192.168.56.77, Port: 443, Method: GET, PPS: 780.30k, BPS: 1.30 GB / 6%
+Напиши функцию, которая вернет значение BPS в MB. На примерах строк видно, что если "--", то это 0. Также видно, что BPS может быть представлен в разных форматах. Но вернуть надо в MB. Размер которые могут встречаться: "B", "kB", "MB", "GB".
+
