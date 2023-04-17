@@ -286,7 +286,7 @@ def get_pps(string):
 
 
 def parse_pps(string):
-    pps_pattern = r"PPS: (\d*\.?\d+)([kMG]?)"
+    pps_pattern = r"PPS: (\d*\.?\d+)([kmg]?)"
     pps_value, pps_unit = re.search(pps_pattern, string).groups()
     UNITS = {"": 1, "k": 1000, "M": 1000000, "G": 1000000000}
     return float(pps_value) * UNITS[pps_unit]
