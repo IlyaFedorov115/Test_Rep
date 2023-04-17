@@ -156,3 +156,20 @@ def extract_bps(s):
     
     return bps_value, bps_type
 
+def extract_bps(string):
+    for substring in string.split(','):
+        if substring.strip().startswith('BPS:'):
+            bps = substring.strip().replace('BPS:', '').strip()
+            if bps == '--':
+                return 0
+            else:
+                value, unit = bps.split(' ')
+                if unit == 'B':
+                    return float(value) / 1024 / 1024
+                elif unit == 'kB':
+                    return float(value) / 1024
+                elif unit == 'MB':
+                    return float(value)
+                elif unit == 'GB':
+                    return float(value) * 1024
+    return None
