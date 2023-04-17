@@ -274,6 +274,7 @@ def get_pps(string):
     # Извлекаем значение PPS из строки
     pps_value = string[start_index:end_index]
     # Конвертируем PPS в число
+    print(pps_value)
     if pps_value[-1] == 'k':
         pps_value = float(pps_value[:-1]) * 1000
     elif pps_value[-1] == 'm':
