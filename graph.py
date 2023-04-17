@@ -264,3 +264,24 @@ def extract_bps(string):
     else:
         return None
 
+def get_pps(string):
+    # Ищем первое вхождение "PPS:" в строке
+    start_index = string.find("PPS:") + 5
+    
+    # Ищем первый символ, отличный от цифр и точки, после значения PPS
+    end_index = start_index
+    while end_index < len(string) and string[end_index].isdigit() or string[end_index] == ".":
+        end_index += 1
+    
+    # Извлекаем значение PPS из строки
+    pps_value = string[start_index:end_index]
+    
+    # Конвертируем PPS в число
+    if pps_value[-1] == 'k':
+        pps_value = float(pps_value[:-1]) * 1000
+    elif pps_value[-1] == 'm':
+        pps_value = float(pps_value[:-1]) * 1000000
+    else:
+        pps_value = float(pps_value)
+    
+    return pps_value
