@@ -246,10 +246,10 @@ def extract_bps(string):
     # Используем регулярное выражение для извлечения значения BPS и его единицы измерения
     pattern = r'BPS: (--|\d+\.\d+) ([KMG]?B) / (\d+)%'
     UNITS = {
-    'B': 1,
+    'B': 1/1024/1024,
     'kB': 1/1024,
-    'MB': 1/1024/1024,
-    'GB': 1/1024/1024/1024,
+    'MB': 1,
+    'GB': 1024,
     }
     match = re.search(pattern, string)
     if match:
@@ -259,7 +259,7 @@ def extract_bps(string):
         else:
             bps_value = float(bps_str)
         bps_unit = match.group(2)
-        mb_value = bps_value * UNITS[bps_unit] / UNITS['MB']
+        mb_value = bps_value * UNITS[bps_unit] #/ UNITS['MB']
         return mb_value
     else:
         return None
