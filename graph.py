@@ -179,7 +179,7 @@ def get_bps_in_mb(s):
     if bps_start == -1:
         return None
     bps_end = s.find(" ", bps_start+len("BPS: "))
-
+    bps_mb = 0.0
     bps_str = s[bps_start+len("BPS: "):bps_end]
     if bps_str == "--":
         bps_mb = 0.0
