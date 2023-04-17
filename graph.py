@@ -241,4 +241,26 @@ def get_bps_in_mb(log_str):
         raise ValueError("Unexpected BPS unit: {}".format(bps_unit))
     return bps_val
 
+import re
+def extract_bps(string):
+    # Используем регулярное выражение для извлечения значения BPS и его единицы измерения
+    pattern = r'BPS: (--|\d+\.\d+) ([KMG]?B) / (\d+)%'
+    UNITS = {
+    'B': 1,
+    'kB': 1/1024,
+    'MB': 1/1024/1024,
+    'GB': 1/1024/1024/1024,
+    }
+    match = re.search(pattern, string)
+    if match:
+        bps_str = match.group(1)
+        if bps_str == "--":
+            bps_value = 0.0
+        else:
+            bps_value = float(bps_str)
+        bps_unit = match.group(2)
+        mb_value = bps_value * UNITS[bps_unit] / UNITS['MB']
+        return mb_value
+    else:
+        return None
 
