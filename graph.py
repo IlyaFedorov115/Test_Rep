@@ -209,6 +209,7 @@ def get_bps_in_mb(s):
     else:
         bps_val = float(bps_str[:-1])
         bps_unit = bps_str[-1]
+        print(bps_unit)
         if bps_unit == "B":
             bps_mb = bps_val / 1024 / 1024
         elif bps_unit == "kB":
