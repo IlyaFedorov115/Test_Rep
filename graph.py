@@ -290,3 +290,24 @@ def parse_pps(string):
     pps_value, pps_unit = re.search(pps_pattern, string).groups()
     UNITS = {"": 1, "k": 1000, "m": 1000000, "g": 1000000000}
     return float(pps_value) * UNITS[pps_unit]
+
+
+
+def get_speed_in_MB_per_sec(input_string):
+    # Извлекаем значение скорости и единицы измерения из входной строки с помощью регулярного выражения
+    match = re.search(r"(\d+(\.\d+)?)\s*(\w+)/s$", input_string)
+    if match:
+        speed = float(match.group(1))
+        unit = match.group(3)
+        # Преобразуем значение скорости в мегабайты в соответствии с единицами измерения
+        if unit == 'B':
+            speed /= 1024 * 1024
+        elif unit == 'KB':
+            speed /= 1024
+        elif unit == 'G':
+            speed *= 1024
+        # Возвращаем значение скорости в MB/s
+        return speed
+    else:
+        # Если входная строка не соответствует ожидаемому формату, возвращаем None
+        return None
