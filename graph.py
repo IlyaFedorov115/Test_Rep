@@ -252,3 +252,6 @@ if __name__ == '__main__':
     '''
     #video_graph.made_demonstation()
     
+	"use_clone": "false",
+    def getIsUseClone(self):
+        return self._config["use_clone"] == "true"
