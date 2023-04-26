@@ -1,0 +1,10 @@
+filename,ssim,count_packets
+video_before_attack1.mkv,0.986721,918
+video_before_attack2.mkv,0.986556,916
+video_before_attack3.mkv,0.978045,918
+video_during_attack1.mkv,0.986721,918
+video_during_attack2.mkv,0.986656,918
+video_during_attack3.mkv,0.986721,918
+video_after_attack1.mkv,0.986721,918
+video_after_attack2.mkv,0.986718,918
+video_after_attack3.mkv,0.986721,918

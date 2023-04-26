@@ -1,0 +1,595 @@
+
+starting benchmark...
+spawning thread #0: 50 total client(s). 50 total requests
+spawning thread #1: 50 total client(s). 50 total requests
+TLS Protocol: TLSv1.2
+Cipher: ECDHE-RSA-AES256-GCM-SHA384
+Server Temp Key: X25519 253 bits
+Application protocol: http/1.1
+progress: 10% done
+progress: 20% done
+progress: 30% done
+progress: 40% done
+progress: 50% done
+progress: 60% done
+progress: 70% done
+progress: 80% done
+progress: 90% done
+progress: 100% done
+
+finished in 3.49s, 28.62 req/s, 42.61MB/s
+requests: 100 total, 100 started, 100 done, 100 succeeded, 0 failed, 0 errored, 0 timeout
+status codes: 100 2xx, 0 3xx, 0 4xx, 0 5xx
+traffic: 148.86MB (156086400) total, 22.75KB (23300) headers (space savings 0.00%), 148.83MB (156057600) data
+                     min         max         mean         sd        +/- sd
+time for request:   661.92ms       3.42s       2.72s    459.35ms    76.00%
+time for connect:    28.84ms    360.71ms    196.03ms    105.97ms    54.00%
+time to 1st byte:    61.63ms    588.06ms    329.61ms    170.64ms    55.00%
+req/s           :       0.29        1.45        0.36        0.13    95.00%
+starting benchmark...
+spawning thread #0: 50 total client(s). 50 total requests
+spawning thread #1: 50 total client(s). 50 total requests
+TLS Protocol: TLSv1.2
+Cipher: ECDHE-RSA-AES256-GCM-SHA384
+Server Temp Key: X25519 253 bits
+Application protocol: http/1.1
+progress: 10% done
+progress: 20% done
+progress: 30% done
+progress: 40% done
+progress: 50% done
+progress: 60% done
+progress: 70% done
+progress: 80% done
+progress: 90% done
+progress: 100% done
+
+finished in 3.46s, 28.92 req/s, 43.05MB/s
+requests: 100 total, 100 started, 100 done, 100 succeeded, 0 failed, 0 errored, 0 timeout
+status codes: 100 2xx, 0 3xx, 0 4xx, 0 5xx
+traffic: 148.86MB (156086400) total, 22.75KB (23300) headers (space savings 0.00%), 148.83MB (156057600) data
+                     min         max         mean         sd        +/- sd
+time for request:   872.79ms       3.18s       2.83s    481.23ms    85.00%
+time for connect:    17.15ms    335.23ms    171.40ms     94.00ms    55.00%
+time to 1st byte:    25.36ms    463.04ms    246.72ms    130.32ms    56.00%
+req/s           :       0.29        1.12        0.35        0.13    93.00%
+starting benchmark...
+spawning thread #0: 50 total client(s). 50 total requests
+spawning thread #1: 50 total client(s). 50 total requests
+TLS Protocol: TLSv1.2
+Cipher: ECDHE-RSA-AES256-GCM-SHA384
+Server Temp Key: X25519 253 bits
+Application protocol: http/1.1
+progress: 10% done
+progress: 20% done
+progress: 30% done
+progress: 40% done
+progress: 50% done
+progress: 60% done
+progress: 70% done
+progress: 80% done
+progress: 90% done
+progress: 100% done
+
+finished in 3.38s, 29.61 req/s, 44.08MB/s
+requests: 100 total, 100 started, 100 done, 100 succeeded, 0 failed, 0 errored, 0 timeout
+status codes: 100 2xx, 0 3xx, 0 4xx, 0 5xx
+traffic: 148.86MB (156086400) total, 22.75KB (23300) headers (space savings 0.00%), 148.83MB (156057600) data
+                     min         max         mean         sd        +/- sd
+time for request:      1.43s       3.19s       2.80s    337.67ms    81.00%
+time for connect:    26.38ms    353.64ms    186.81ms     97.21ms    59.00%
+time to 1st byte:    40.37ms    546.61ms    295.65ms    150.34ms    61.00%
+req/s           :       0.30        0.68        0.34        0.07    89.00%
+starting benchmark...
+spawning thread #0: 50 total client(s). 50 total requests
+spawning thread #1: 50 total client(s). 50 total requests
+TLS Protocol: TLSv1.2
+Cipher: ECDHE-RSA-AES256-GCM-SHA384
+Server Temp Key: X25519 253 bits
+Application protocol: http/1.1
+progress: 10% done
+progress: 20% done
+progress: 30% done
+progress: 40% done
+progress: 50% done
+progress: 60% done
+progress: 70% done
+progress: 80% done
+progress: 90% done
+progress: 100% done
+
+finished in 3.34s, 29.96 req/s, 44.60MB/s
+requests: 100 total, 100 started, 100 done, 100 succeeded, 0 failed, 0 errored, 0 timeout
+status codes: 100 2xx, 0 3xx, 0 4xx, 0 5xx
+traffic: 148.86MB (156086400) total, 22.75KB (23300) headers (space savings 0.00%), 148.83MB (156057600) data
+                     min         max         mean         sd        +/- sd
+time for request:      1.72s       3.04s       2.79s    333.84ms    84.00%
+time for connect:    27.23ms    329.86ms    181.65ms     93.40ms    59.00%
+time to 1st byte:    35.31ms    478.71ms    274.49ms    131.88ms    62.00%
+req/s           :       0.30        0.57        0.35        0.06    85.00%
+starting benchmark...
+spawning thread #0: 50 total client(s). 50 total requests
+spawning thread #1: 50 total client(s). 50 total requests
+TLS Protocol: TLSv1.2
+Cipher: ECDHE-RSA-AES256-GCM-SHA384
+Server Temp Key: X25519 253 bits
+Application protocol: http/1.1
+progress: 10% done
+progress: 20% done
+progress: 30% done
+progress: 40% done
+progress: 50% done
+progress: 60% done
+progress: 70% done
+progress: 80% done
+progress: 90% done
+progress: 100% done
+
+finished in 3.27s, 30.60 req/s, 45.54MB/s
+requests: 100 total, 100 started, 100 done, 100 succeeded, 0 failed, 0 errored, 0 timeout
+status codes: 100 2xx, 0 3xx, 0 4xx, 0 5xx
+traffic: 148.86MB (156086400) total, 22.75KB (23300) headers (space savings 0.00%), 148.83MB (156057600) data
+                     min         max         mean         sd        +/- sd
+time for request:      1.43s       3.09s       2.62s    350.87ms    75.00%
+time for connect:    23.59ms    375.48ms    197.48ms    108.77ms    59.00%
+time to 1st byte:    33.29ms    574.66ms    315.90ms    162.26ms    60.00%
+req/s           :       0.31        0.69        0.37        0.08    88.00%
+starting benchmark...
+spawning thread #0: 50 total client(s). 50 total requests
+spawning thread #1: 50 total client(s). 50 total requests
+TLS Protocol: TLSv1.2
+Cipher: ECDHE-RSA-AES256-GCM-SHA384
+Server Temp Key: X25519 253 bits
+Application protocol: http/1.1
+progress: 10% done
+progress: 20% done
+progress: 30% done
+progress: 40% done
+progress: 50% done
+progress: 60% done
+progress: 70% done
+progress: 80% done
+progress: 90% done
+progress: 100% done
+
+finished in 3.21s, 31.13 req/s, 46.33MB/s
+requests: 100 total, 100 started, 100 done, 100 succeeded, 0 failed, 0 errored, 0 timeout
+status codes: 100 2xx, 0 3xx, 0 4xx, 0 5xx
+traffic: 148.86MB (156086400) total, 22.75KB (23300) headers (space savings 0.00%), 148.83MB (156057600) data
+                     min         max         mean         sd        +/- sd
+time for request:      1.33s       2.93s       2.65s    368.66ms    85.00%
+time for connect:    25.49ms    328.72ms    176.28ms     96.32ms    55.00%
+time to 1st byte:    33.07ms    474.19ms    264.47ms    136.35ms    57.00%
+req/s           :       0.31        0.74        0.37        0.08    85.00%
+starting benchmark...
+spawning thread #0: 50 total client(s). 50 total requests
+spawning thread #1: 50 total client(s). 50 total requests
+TLS Protocol: TLSv1.2
+Cipher: ECDHE-RSA-AES256-GCM-SHA384
+Server Temp Key: X25519 253 bits
+Application protocol: http/1.1
+progress: 10% done
+progress: 20% done
+progress: 30% done
+progress: 40% done
+progress: 50% done
+progress: 60% done
+progress: 70% done
+progress: 80% done
+progress: 90% done
+progress: 100% done
+
+finished in 3.18s, 31.46 req/s, 46.84MB/s
+requests: 100 total, 100 started, 100 done, 100 succeeded, 0 failed, 0 errored, 0 timeout
+status codes: 100 2xx, 0 3xx, 0 4xx, 0 5xx
+traffic: 148.86MB (156086400) total, 22.75KB (23300) headers (space savings 0.00%), 148.83MB (156057600) data
+                     min         max         mean         sd        +/- sd
+time for request:      1.49s       3.05s       2.56s    373.56ms    75.00%
+time for connect:    25.35ms    323.66ms    168.65ms     93.18ms    57.00%
+time to 1st byte:    33.61ms    518.10ms    276.18ms    149.07ms    57.00%
+req/s           :       0.31        0.66        0.38        0.08    86.00%
+starting benchmark...
+spawning thread #0: 50 total client(s). 50 total requests
+spawning thread #1: 50 total client(s). 50 total requests
+TLS Protocol: TLSv1.2
+Cipher: ECDHE-RSA-AES256-GCM-SHA384
+Server Temp Key: X25519 253 bits
+Application protocol: http/1.1
+progress: 10% done
+progress: 20% done
+progress: 30% done
+progress: 40% done
+progress: 50% done
+progress: 60% done
+progress: 70% done
+progress: 80% done
+progress: 90% done
+progress: 100% done
+
+finished in 3.16s, 31.62 req/s, 47.06MB/s
+requests: 100 total, 100 started, 100 done, 100 succeeded, 0 failed, 0 errored, 0 timeout
+status codes: 100 2xx, 0 3xx, 0 4xx, 0 5xx
+traffic: 148.86MB (156086400) total, 22.75KB (23300) headers (space savings 0.00%), 148.83MB (156057600) data
+                     min         max         mean         sd        +/- sd
+time for request:      1.56s       2.89s       2.59s    391.85ms    84.00%
+time for connect:    24.93ms    305.70ms    155.36ms     87.98ms    57.00%
+time to 1st byte:    34.42ms    414.45ms    223.26ms    120.07ms    56.00%
+req/s           :       0.32        0.63        0.38        0.09    85.00%
+starting benchmark...
+spawning thread #0: 50 total client(s). 50 total requests
+spawning thread #1: 50 total client(s). 50 total requests
+TLS Protocol: TLSv1.2
+Cipher: ECDHE-RSA-AES256-GCM-SHA384
+Server Temp Key: X25519 253 bits
+Application protocol: http/1.1
+progress: 10% done
+progress: 20% done
+progress: 30% done
+progress: 40% done
+progress: 50% done
+progress: 60% done
+progress: 70% done
+progress: 80% done
+progress: 90% done
+progress: 100% done
+
+finished in 3.17s, 31.54 req/s, 46.95MB/s
+requests: 100 total, 100 started, 100 done, 100 succeeded, 0 failed, 0 errored, 0 timeout
+status codes: 100 2xx, 0 3xx, 0 4xx, 0 5xx
+traffic: 148.86MB (156086400) total, 22.75KB (23300) headers (space savings 0.00%), 148.83MB (156057600) data
+                     min         max         mean         sd        +/- sd
+time for request:      1.40s       2.98s       2.58s    356.85ms    83.00%
+time for connect:    27.19ms    356.05ms    177.74ms    103.84ms    56.00%
+time to 1st byte:    35.53ms    537.89ms    280.82ms    156.69ms    56.00%
+req/s           :       0.32        0.70        0.38        0.08    87.00%
+starting benchmark...
+spawning thread #0: 50 total client(s). 50 total requests
+spawning thread #1: 50 total client(s). 50 total requests
+TLS Protocol: TLSv1.2
+Cipher: ECDHE-RSA-AES256-GCM-SHA384
+Server Temp Key: X25519 253 bits
+Application protocol: http/1.1
+progress: 10% done
+progress: 20% done
+progress: 30% done
+progress: 40% done
+progress: 50% done
+progress: 60% done
+progress: 70% done
+progress: 80% done
+progress: 90% done
+progress: 100% done
+
+finished in 3.17s, 31.51 req/s, 46.90MB/s
+requests: 100 total, 100 started, 100 done, 100 succeeded, 0 failed, 0 errored, 0 timeout
+status codes: 100 2xx, 0 3xx, 0 4xx, 0 5xx
+traffic: 148.86MB (156086400) total, 22.75KB (23300) headers (space savings 0.00%), 148.83MB (156057600) data
+                     min         max         mean         sd        +/- sd
+time for request:      1.04s       2.99s       2.55s    372.95ms    77.00%
+time for connect:    22.31ms    333.22ms    173.39ms     94.96ms    58.00%
+time to 1st byte:    29.21ms    510.18ms    273.81ms    146.57ms    58.00%
+req/s           :       0.32        0.94        0.38        0.09    88.00%
+starting benchmark...
+spawning thread #0: 50 total client(s). 50 total requests
+spawning thread #1: 50 total client(s). 50 total requests
+TLS Protocol: TLSv1.2
+Cipher: ECDHE-RSA-AES256-GCM-SHA384
+Server Temp Key: X25519 253 bits
+Application protocol: http/1.1
+progress: 10% done
+progress: 20% done
+progress: 30% done
+progress: 40% done
+progress: 50% done
+progress: 60% done
+progress: 70% done
+progress: 80% done
+progress: 90% done
+progress: 100% done
+
+finished in 3.17s, 31.58 req/s, 47.01MB/s
+requests: 100 total, 100 started, 100 done, 100 succeeded, 0 failed, 0 errored, 0 timeout
+status codes: 100 2xx, 0 3xx, 0 4xx, 0 5xx
+traffic: 148.86MB (156086400) total, 22.75KB (23300) headers (space savings 0.00%), 148.83MB (156057600) data
+                     min         max         mean         sd        +/- sd
+time for request:      1.37s       2.88s       2.62s    385.69ms    84.00%
+time for connect:    22.80ms    302.95ms    158.14ms     88.19ms    57.00%
+time to 1st byte:    31.76ms    456.69ms    248.18ms    133.29ms    57.00%
+req/s           :       0.32        0.72        0.37        0.09    87.00%
+starting benchmark...
+spawning thread #0: 50 total client(s). 50 total requests
+spawning thread #1: 50 total client(s). 50 total requests
+TLS Protocol: TLSv1.2
+Cipher: ECDHE-RSA-AES256-GCM-SHA384
+Server Temp Key: X25519 253 bits
+Application protocol: http/1.1
+progress: 10% done
+progress: 20% done
+progress: 30% done
+progress: 40% done
+progress: 50% done
+progress: 60% done
+progress: 70% done
+progress: 80% done
+progress: 90% done
+progress: 100% done
+
+finished in 3.17s, 31.58 req/s, 47.00MB/s
+requests: 100 total, 100 started, 100 done, 100 succeeded, 0 failed, 0 errored, 0 timeout
+status codes: 100 2xx, 0 3xx, 0 4xx, 0 5xx
+traffic: 148.86MB (156086400) total, 22.75KB (23300) headers (space savings 0.00%), 148.83MB (156057600) data
+                     min         max         mean         sd        +/- sd
+time for request:      1.21s       3.10s       2.52s    390.14ms    77.00%
+time for connect:    24.32ms    351.84ms    181.98ms    102.02ms    58.00%
+time to 1st byte:    31.87ms    542.90ms    290.57ms    157.00ms    58.00%
+req/s           :       0.32        0.81        0.39        0.09    89.00%
+starting benchmark...
+spawning thread #0: 50 total client(s). 50 total requests
+spawning thread #1: 50 total client(s). 50 total requests
+TLS Protocol: TLSv1.2
+Cipher: ECDHE-RSA-AES256-GCM-SHA384
+Server Temp Key: X25519 253 bits
+Application protocol: http/1.1
+progress: 10% done
+progress: 20% done
+progress: 30% done
+progress: 40% done
+progress: 50% done
+progress: 60% done
+progress: 70% done
+progress: 80% done
+progress: 90% done
+progress: 100% done
+
+finished in 3.16s, 31.68 req/s, 47.15MB/s
+requests: 100 total, 100 started, 100 done, 100 succeeded, 0 failed, 0 errored, 0 timeout
+status codes: 100 2xx, 0 3xx, 0 4xx, 0 5xx
+traffic: 148.86MB (156086400) total, 22.75KB (23300) headers (space savings 0.00%), 148.83MB (156057600) data
+                     min         max         mean         sd        +/- sd
+time for request:      1.13s       2.86s       2.58s    395.93ms    85.00%
+time for connect:    18.98ms    340.45ms    168.29ms     98.32ms    57.00%
+time to 1st byte:    26.95ms    487.46ms    253.30ms    141.06ms    59.00%
+req/s           :       0.32        0.87        0.38        0.10    88.00%
+starting benchmark...
+spawning thread #0: 50 total client(s). 50 total requests
+spawning thread #1: 50 total client(s). 50 total requests
+TLS Protocol: TLSv1.2
+Cipher: ECDHE-RSA-AES256-GCM-SHA384
+Server Temp Key: X25519 253 bits
+Application protocol: http/1.1
+progress: 10% done
+progress: 20% done
+progress: 30% done
+progress: 40% done
+progress: 50% done
+progress: 60% done
+progress: 70% done
+progress: 80% done
+progress: 90% done
+progress: 100% done
+
+finished in 3.17s, 31.55 req/s, 46.97MB/s
+requests: 100 total, 100 started, 100 done, 100 succeeded, 0 failed, 0 errored, 0 timeout
+status codes: 100 2xx, 0 3xx, 0 4xx, 0 5xx
+traffic: 148.86MB (156086400) total, 22.75KB (23300) headers (space savings 0.00%), 148.83MB (156057600) data
+                     min         max         mean         sd        +/- sd
+time for request:      1.15s       2.98s       2.54s    369.65ms    83.00%
+time for connect:    19.72ms    345.09ms    177.51ms    101.28ms    57.00%
+time to 1st byte:    28.37ms    536.33ms    288.58ms    155.06ms    58.00%
+req/s           :       0.32        0.85        0.38        0.09    87.00%
+starting benchmark...
+spawning thread #0: 50 total client(s). 50 total requests
+spawning thread #1: 50 total client(s). 50 total requests
+TLS Protocol: TLSv1.2
+Cipher: ECDHE-RSA-AES256-GCM-SHA384
+Server Temp Key: X25519 253 bits
+Application protocol: http/1.1
+progress: 10% done
+progress: 20% done
+progress: 30% done
+progress: 40% done
+progress: 50% done
+progress: 60% done
+progress: 70% done
+progress: 80% done
+progress: 90% done
+progress: 100% done
+
+finished in 3.16s, 31.66 req/s, 47.13MB/s
+requests: 100 total, 100 started, 100 done, 100 succeeded, 0 failed, 0 errored, 0 timeout
+status codes: 100 2xx, 0 3xx, 0 4xx, 0 5xx
+traffic: 148.86MB (156086400) total, 22.75KB (23300) headers (space savings 0.00%), 148.83MB (156057600) data
+                     min         max         mean         sd        +/- sd
+time for request:      1.22s       2.81s       2.49s    424.50ms    84.00%
+time for connect:    27.41ms    408.53ms    196.57ms    119.58ms    55.00%
+time to 1st byte:    36.51ms    554.08ms    277.30ms    161.39ms    57.00%
+req/s           :       0.32        0.80        0.39        0.11    87.00%
+starting benchmark...
+spawning thread #0: 50 total client(s). 50 total requests
+spawning thread #1: 50 total client(s). 50 total requests
+TLS Protocol: TLSv1.2
+Cipher: ECDHE-RSA-AES256-GCM-SHA384
+Server Temp Key: X25519 253 bits
+Application protocol: http/1.1
+progress: 10% done
+progress: 20% done
+progress: 30% done
+progress: 40% done
+progress: 50% done
+progress: 60% done
+progress: 70% done
+progress: 80% done
+progress: 90% done
+progress: 100% done
+
+finished in 3.15s, 31.73 req/s, 47.23MB/s
+requests: 100 total, 100 started, 100 done, 100 succeeded, 0 failed, 0 errored, 0 timeout
+status codes: 100 2xx, 0 3xx, 0 4xx, 0 5xx
+traffic: 148.86MB (156086400) total, 22.75KB (23300) headers (space savings 0.00%), 148.83MB (156057600) data
+                     min         max         mean         sd        +/- sd
+time for request:      1.17s       2.99s       2.53s    372.91ms    81.00%
+time for connect:    19.92ms    327.69ms    170.38ms     94.00ms    59.00%
+time to 1st byte:    27.45ms    514.86ms    275.07ms    146.73ms    59.00%
+req/s           :       0.32        0.84        0.38        0.09    87.00%
+starting benchmark...
+spawning thread #0: 50 total client(s). 50 total requests
+spawning thread #1: 50 total client(s). 50 total requests
+TLS Protocol: TLSv1.2
+Cipher: ECDHE-RSA-AES256-GCM-SHA384
+Server Temp Key: X25519 253 bits
+Application protocol: http/1.1
+progress: 10% done
+progress: 20% done
+progress: 30% done
+progress: 40% done
+progress: 50% done
+progress: 60% done
+progress: 70% done
+progress: 80% done
+progress: 90% done
+progress: 100% done
+
+finished in 3.17s, 31.57 req/s, 46.99MB/s
+requests: 100 total, 100 started, 100 done, 100 succeeded, 0 failed, 0 errored, 0 timeout
+status codes: 100 2xx, 0 3xx, 0 4xx, 0 5xx
+traffic: 148.86MB (156086400) total, 22.75KB (23300) headers (space savings 0.00%), 148.83MB (156057600) data
+                     min         max         mean         sd        +/- sd
+time for request:      1.18s       2.89s       2.61s    412.13ms    85.00%
+time for connect:    21.30ms    312.32ms    164.14ms     89.82ms    57.00%
+time to 1st byte:    28.94ms    433.66ms    236.71ms    123.56ms    57.00%
+req/s           :       0.32        0.84        0.38        0.10    89.00%
+starting benchmark...
+spawning thread #0: 50 total client(s). 50 total requests
+spawning thread #1: 50 total client(s). 50 total requests
+TLS Protocol: TLSv1.2
+Cipher: ECDHE-RSA-AES256-GCM-SHA384
+Server Temp Key: X25519 253 bits
+Application protocol: http/1.1
+progress: 10% done
+progress: 20% done
+progress: 30% done
+progress: 40% done
+progress: 50% done
+progress: 60% done
+progress: 70% done
+progress: 80% done
+progress: 90% done
+progress: 100% done
+
+finished in 3.20s, 31.25 req/s, 46.52MB/s
+requests: 100 total, 100 started, 100 done, 100 succeeded, 0 failed, 0 errored, 0 timeout
+status codes: 100 2xx, 0 3xx, 0 4xx, 0 5xx
+traffic: 148.86MB (156086400) total, 22.75KB (23300) headers (space savings 0.00%), 148.83MB (156057600) data
+                     min         max         mean         sd        +/- sd
+time for request:      1.37s       3.00s       2.61s    348.16ms    81.00%
+time for connect:    20.17ms    330.59ms    175.45ms     96.01ms    57.00%
+time to 1st byte:    28.80ms    508.42ms    279.41ms    145.24ms    59.00%
+req/s           :       0.31        0.72        0.37        0.08    87.00%
+starting benchmark...
+spawning thread #0: 50 total client(s). 50 total requests
+spawning thread #1: 50 total client(s). 50 total requests
+TLS Protocol: TLSv1.2
+Cipher: ECDHE-RSA-AES256-GCM-SHA384
+Server Temp Key: X25519 253 bits
+Application protocol: http/1.1
+progress: 10% done
+progress: 20% done
+progress: 30% done
+progress: 40% done
+progress: 50% done
+progress: 60% done
+progress: 70% done
+progress: 80% done
+progress: 90% done
+progress: 100% done
+
+finished in 3.20s, 31.27 req/s, 46.54MB/s
+requests: 100 total, 100 started, 100 done, 100 succeeded, 0 failed, 0 errored, 0 timeout
+status codes: 100 2xx, 0 3xx, 0 4xx, 0 5xx
+traffic: 148.86MB (156086400) total, 22.75KB (23300) headers (space savings 0.00%), 148.83MB (156057600) data
+                     min         max         mean         sd        +/- sd
+time for request:      1.29s       3.01s       2.62s    369.95ms    82.00%
+time for connect:    26.77ms    326.80ms    167.70ms     92.00ms    57.00%
+time to 1st byte:    36.21ms    494.70ms    262.13ms    140.30ms    57.00%
+req/s           :       0.31        0.76        0.37        0.08    86.00%
+starting benchmark...
+spawning thread #0: 50 total client(s). 50 total requests
+spawning thread #1: 50 total client(s). 50 total requests
+TLS Protocol: TLSv1.2
+Cipher: ECDHE-RSA-AES256-GCM-SHA384
+Server Temp Key: X25519 253 bits
+Application protocol: http/1.1
+progress: 10% done
+progress: 20% done
+progress: 30% done
+progress: 40% done
+progress: 50% done
+progress: 60% done
+progress: 70% done
+progress: 80% done
+progress: 90% done
+progress: 100% done
+
+finished in 3.22s, 31.10 req/s, 46.29MB/s
+requests: 100 total, 100 started, 100 done, 100 succeeded, 0 failed, 0 errored, 0 timeout
+status codes: 100 2xx, 0 3xx, 0 4xx, 0 5xx
+traffic: 148.86MB (156086400) total, 22.75KB (23300) headers (space savings 0.00%), 148.83MB (156057600) data
+                     min         max         mean         sd        +/- sd
+time for request:      1.07s       2.99s       2.59s    391.14ms    83.00%
+time for connect:    23.74ms    389.47ms    190.79ms    107.87ms    58.00%
+time to 1st byte:    35.88ms    556.36ms    284.47ms    155.47ms    56.00%
+req/s           :       0.31        0.92        0.38        0.10    89.00%
+starting benchmark...
+spawning thread #0: 50 total client(s). 50 total requests
+spawning thread #1: 50 total client(s). 50 total requests
+TLS Protocol: TLSv1.2
+Cipher: ECDHE-RSA-AES256-GCM-SHA384
+Server Temp Key: X25519 253 bits
+Application protocol: http/1.1
+progress: 10% done
+progress: 20% done
+progress: 30% done
+progress: 40% done
+progress: 50% done
+progress: 60% done
+progress: 70% done
+progress: 80% done
+progress: 90% done
+progress: 100% done
+
+finished in 3.49s, 28.67 req/s, 42.67MB/s
+requests: 100 total, 100 started, 100 done, 100 succeeded, 0 failed, 0 errored, 0 timeout
+status codes: 100 2xx, 0 3xx, 0 4xx, 0 5xx
+traffic: 148.86MB (156086400) total, 22.75KB (23300) headers (space savings 0.00%), 148.83MB (156057600) data
+                     min         max         mean         sd        +/- sd
+time for request:      1.18s       3.32s       2.87s    403.17ms    83.00%
+time for connect:    19.70ms    432.64ms    220.85ms    132.23ms    58.00%
+time to 1st byte:    29.67ms    623.08ms    358.39ms    201.66ms    51.00%
+req/s           :       0.29        0.83        0.34        0.08    93.00%
+starting benchmark...
+spawning thread #0: 50 total client(s). 50 total requests
+spawning thread #1: 50 total client(s). 50 total requests
+TLS Protocol: TLSv1.2
+Cipher: ECDHE-RSA-AES256-GCM-SHA384
+Server Temp Key: X25519 253 bits
+Application protocol: http/1.1
+progress: 10% done
+progress: 20% done
+progress: 30% done
+progress: 40% done
+progress: 50% done
+progress: 60% done
+progress: 70% done
+progress: 80% done
+progress: 90% done
+progress: 100% done
+
+finished in 3.12s, 32.01 req/s, 47.65MB/s
+requests: 100 total, 100 started, 100 done, 100 succeeded, 0 failed, 0 errored, 0 timeout
+status codes: 100 2xx, 0 3xx, 0 4xx, 0 5xx
+traffic: 148.86MB (156086400) total, 22.75KB (23300) headers (space savings 0.00%), 148.83MB (156057600) data
+                     min         max         mean         sd        +/- sd
+time for request:      1.05s       2.96s       2.62s    303.24ms    89.00%
+time for connect:    21.39ms    342.86ms    184.25ms     97.35ms    58.00%
+time to 1st byte:    30.17ms    492.62ms    284.12ms    141.83ms    59.00%
+req/s           :       0.32        0.93        0.37        0.08    94.00%

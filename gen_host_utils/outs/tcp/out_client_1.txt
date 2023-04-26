@@ -1,0 +1,468 @@
+
+starting benchmark...
+spawning thread #0: 50 total client(s). 50 total requests
+spawning thread #1: 50 total client(s). 50 total requests
+Application protocol: http/1.1
+progress: 10% done
+progress: 20% done
+progress: 30% done
+progress: 40% done
+progress: 50% done
+progress: 60% done
+progress: 70% done
+progress: 80% done
+progress: 90% done
+progress: 100% done
+
+finished in 1.20s, 83.02 req/s, 123.58MB/s
+requests: 100 total, 100 started, 100 done, 100 succeeded, 0 failed, 0 errored, 0 timeout
+status codes: 100 2xx, 0 3xx, 0 4xx, 0 5xx
+traffic: 148.86MB (156086400) total, 22.75KB (23300) headers (space savings 0.00%), 148.83MB (156057600) data
+                     min         max         mean         sd        +/- sd
+time for request:   355.99ms       1.19s    962.04ms    193.37ms    67.00%
+time for connect:     1.09ms     11.60ms      6.15ms      4.33ms    52.00%
+time to 1st byte:     2.93ms     36.20ms     19.42ms     12.13ms    59.00%
+req/s           :       0.84        2.80        1.09        0.33    88.00%
+starting benchmark...
+spawning thread #0: 50 total client(s). 50 total requests
+spawning thread #1: 50 total client(s). 50 total requests
+Application protocol: http/1.1
+progress: 10% done
+progress: 20% done
+progress: 30% done
+progress: 40% done
+progress: 50% done
+progress: 60% done
+progress: 70% done
+progress: 80% done
+progress: 90% done
+progress: 100% done
+
+finished in 1.29s, 77.24 req/s, 114.97MB/s
+requests: 100 total, 100 started, 100 done, 100 succeeded, 0 failed, 0 errored, 0 timeout
+status codes: 100 2xx, 0 3xx, 0 4xx, 0 5xx
+traffic: 148.86MB (156086400) total, 22.75KB (23300) headers (space savings 0.00%), 148.83MB (156057600) data
+                     min         max         mean         sd        +/- sd
+time for request:   994.07ms       1.29s       1.21s     79.26ms    86.00%
+time for connect:      909us     16.46ms      3.84ms      3.24ms    94.00%
+time to 1st byte:     1.72ms     28.05ms     13.81ms      7.57ms    68.00%
+req/s           :       0.77        1.00        0.83        0.06    87.00%
+starting benchmark...
+spawning thread #0: 50 total client(s). 50 total requests
+spawning thread #1: 50 total client(s). 50 total requests
+Application protocol: http/1.1
+progress: 10% done
+progress: 20% done
+progress: 30% done
+progress: 40% done
+progress: 50% done
+progress: 60% done
+progress: 70% done
+progress: 80% done
+progress: 90% done
+progress: 100% done
+
+finished in 1.99s, 50.23 req/s, 74.78MB/s
+requests: 100 total, 100 started, 100 done, 100 succeeded, 0 failed, 0 errored, 0 timeout
+status codes: 100 2xx, 0 3xx, 0 4xx, 0 5xx
+traffic: 148.86MB (156086400) total, 22.75KB (23300) headers (space savings 0.00%), 148.83MB (156057600) data
+                     min         max         mean         sd        +/- sd
+time for request:      1.28s       1.98s       1.79s    151.02ms    77.00%
+time for connect:      907us     13.00ms      5.52ms      3.24ms    62.00%
+time to 1st byte:     1.88ms     48.48ms     18.73ms     14.09ms    63.00%
+req/s           :       0.50        0.78        0.56        0.06    87.00%
+starting benchmark...
+spawning thread #0: 50 total client(s). 50 total requests
+spawning thread #1: 50 total client(s). 50 total requests
+Application protocol: http/1.1
+
+finished in 2.03s, 0.00 req/s, 39.97MB/s
+requests: 100 total, 100 started, 0 done, 0 succeeded, 100 failed, 100 errored, 100 timeout
+status codes: 100 2xx, 0 3xx, 0 4xx, 0 5xx
+traffic: 80.97MB (84904928) total, 22.75KB (23300) headers (space savings 0.00%), 80.94MB (84876128) data
+                     min         max         mean         sd        +/- sd
+time for request:        0us         0us         0us         0us     0.00%
+time for connect:        0us         0us         0us         0us     0.00%
+time to 1st byte:        0us         0us         0us         0us     0.00%
+req/s           :       0.00        0.00        0.00        0.00     0.00%
+starting benchmark...
+spawning thread #0: 50 total client(s). 50 total requests
+spawning thread #1: 50 total client(s). 50 total requests
+Application protocol: http/1.1
+
+finished in 2.01s, 0.00 req/s, 46.23MB/s
+requests: 100 total, 100 started, 0 done, 0 succeeded, 100 failed, 100 errored, 100 timeout
+status codes: 100 2xx, 0 3xx, 0 4xx, 0 5xx
+traffic: 92.86MB (97375104) total, 22.75KB (23300) headers (space savings 0.00%), 92.84MB (97346304) data
+                     min         max         mean         sd        +/- sd
+time for request:        0us         0us         0us         0us     0.00%
+time for connect:        0us         0us         0us         0us     0.00%
+time to 1st byte:        0us         0us         0us         0us     0.00%
+req/s           :       0.00        0.00        0.00        0.00     0.00%
+starting benchmark...
+spawning thread #0: 50 total client(s). 50 total requests
+spawning thread #1: 50 total client(s). 50 total requests
+Application protocol: http/1.1
+
+finished in 2.02s, 0.99 req/s, 39.78MB/s
+requests: 100 total, 100 started, 2 done, 2 succeeded, 98 failed, 98 errored, 98 timeout
+status codes: 100 2xx, 0 3xx, 0 4xx, 0 5xx
+traffic: 80.45MB (84354528) total, 22.75KB (23300) headers (space savings 0.00%), 80.42MB (84325728) data
+                     min         max         mean         sd        +/- sd
+time for request:   368.12ms       1.94s       1.15s    784.90ms    50.00%
+time for connect:      924us       940us       932us         8us    50.00%
+time to 1st byte:     1.44ms      8.73ms      5.09ms      3.64ms    50.00%
+req/s           :       0.52        2.71        1.61        1.10    50.00%
+starting benchmark...
+spawning thread #0: 50 total client(s). 50 total requests
+spawning thread #1: 50 total client(s). 50 total requests
+Application protocol: http/1.1
+
+finished in 2.01s, 0.00 req/s, 39.09MB/s
+requests: 100 total, 100 started, 0 done, 0 succeeded, 100 failed, 100 errored, 100 timeout
+status codes: 100 2xx, 0 3xx, 0 4xx, 0 5xx
+traffic: 78.61MB (82431744) total, 22.75KB (23300) headers (space savings 0.00%), 78.59MB (82402944) data
+                     min         max         mean         sd        +/- sd
+time for request:        0us         0us         0us         0us     0.00%
+time for connect:        0us         0us         0us         0us     0.00%
+time to 1st byte:        0us         0us         0us         0us     0.00%
+req/s           :       0.00        0.00        0.00        0.00     0.00%
+starting benchmark...
+spawning thread #0: 50 total client(s). 50 total requests
+spawning thread #1: 50 total client(s). 50 total requests
+Application protocol: http/1.1
+progress: 10% done
+
+finished in 2.01s, 11.42 req/s, 61.89MB/s
+requests: 100 total, 100 started, 23 done, 23 succeeded, 77 failed, 77 errored, 77 timeout
+status codes: 100 2xx, 0 3xx, 0 4xx, 0 5xx
+traffic: 124.67MB (130722152) total, 22.75KB (23300) headers (space savings 0.00%), 124.64MB (130693352) data
+                     min         max         mean         sd        +/- sd
+time for request:      1.22s       1.76s       1.52s    185.02ms    60.87%
+time for connect:     2.19ms      7.43ms      4.18ms      1.74ms    65.22%
+time to 1st byte:     5.74ms     32.00ms     19.35ms      9.78ms    65.22%
+req/s           :       0.57        0.82        0.66        0.08    65.22%
+starting benchmark...
+spawning thread #0: 50 total client(s). 50 total requests
+spawning thread #1: 50 total client(s). 50 total requests
+Application protocol: http/1.1
+
+finished in 2.02s, 0.00 req/s, 37.47MB/s
+requests: 100 total, 100 started, 0 done, 0 succeeded, 100 failed, 100 errored, 100 timeout
+status codes: 100 2xx, 0 3xx, 0 4xx, 0 5xx
+traffic: 75.59MB (79263520) total, 22.75KB (23300) headers (space savings 0.00%), 75.56MB (79234720) data
+                     min         max         mean         sd        +/- sd
+time for request:        0us         0us         0us         0us     0.00%
+time for connect:        0us         0us         0us         0us     0.00%
+time to 1st byte:        0us         0us         0us         0us     0.00%
+req/s           :       0.00        0.00        0.00        0.00     0.00%
+starting benchmark...
+spawning thread #0: 50 total client(s). 50 total requests
+spawning thread #1: 50 total client(s). 50 total requests
+Application protocol: http/1.1
+
+finished in 2.01s, 0.00 req/s, 37.49MB/s
+requests: 100 total, 100 started, 0 done, 0 succeeded, 100 failed, 100 errored, 100 timeout
+status codes: 100 2xx, 0 3xx, 0 4xx, 0 5xx
+traffic: 75.33MB (78991296) total, 22.75KB (23300) headers (space savings 0.00%), 75.30MB (78962496) data
+                     min         max         mean         sd        +/- sd
+time for request:        0us         0us         0us         0us     0.00%
+time for connect:        0us         0us         0us         0us     0.00%
+time to 1st byte:        0us         0us         0us         0us     0.00%
+req/s           :       0.00        0.00        0.00        0.00     0.00%
+starting benchmark...
+spawning thread #0: 50 total client(s). 50 total requests
+spawning thread #1: 50 total client(s). 50 total requests
+Application protocol: http/1.1
+
+finished in 2.06s, 0.00 req/s, 58.59MB/s
+requests: 100 total, 100 started, 0 done, 0 succeeded, 100 failed, 100 errored, 100 timeout
+status codes: 100 2xx, 0 3xx, 0 4xx, 0 5xx
+traffic: 120.46MB (126313384) total, 22.75KB (23300) headers (space savings 0.00%), 120.43MB (126284584) data
+                     min         max         mean         sd        +/- sd
+time for request:        0us         0us         0us         0us     0.00%
+time for connect:        0us         0us         0us         0us     0.00%
+time to 1st byte:        0us         0us         0us         0us     0.00%
+req/s           :       0.00        0.00        0.00        0.00     0.00%
+starting benchmark...
+spawning thread #0: 50 total client(s). 50 total requests
+spawning thread #1: 50 total client(s). 50 total requests
+Application protocol: http/1.1
+
+finished in 2.01s, 0.00 req/s, 38.53MB/s
+requests: 100 total, 100 started, 0 done, 0 succeeded, 100 failed, 100 errored, 100 timeout
+status codes: 100 2xx, 0 3xx, 0 4xx, 0 5xx
+traffic: 77.52MB (81284928) total, 22.75KB (23300) headers (space savings 0.00%), 77.49MB (81256128) data
+                     min         max         mean         sd        +/- sd
+time for request:        0us         0us         0us         0us     0.00%
+time for connect:        0us         0us         0us         0us     0.00%
+time to 1st byte:        0us         0us         0us         0us     0.00%
+req/s           :       0.00        0.00        0.00        0.00     0.00%
+starting benchmark...
+spawning thread #0: 50 total client(s). 50 total requests
+spawning thread #1: 50 total client(s). 50 total requests
+Application protocol: http/1.1
+
+finished in 2.03s, 0.00 req/s, 37.40MB/s
+requests: 100 total, 100 started, 0 done, 0 succeeded, 100 failed, 100 errored, 100 timeout
+status codes: 100 2xx, 0 3xx, 0 4xx, 0 5xx
+traffic: 75.78MB (79461896) total, 22.75KB (23300) headers (space savings 0.00%), 75.75MB (79433096) data
+                     min         max         mean         sd        +/- sd
+time for request:        0us         0us         0us         0us     0.00%
+time for connect:        0us         0us         0us         0us     0.00%
+time to 1st byte:        0us         0us         0us         0us     0.00%
+req/s           :       0.00        0.00        0.00        0.00     0.00%
+starting benchmark...
+spawning thread #0: 50 total client(s). 50 total requests
+spawning thread #1: 50 total client(s). 50 total requests
+Application protocol: http/1.1
+
+finished in 2.02s, 0.00 req/s, 49.33MB/s
+requests: 100 total, 100 started, 0 done, 0 succeeded, 100 failed, 100 errored, 100 timeout
+status codes: 100 2xx, 0 3xx, 0 4xx, 0 5xx
+traffic: 99.69MB (104531120) total, 22.75KB (23300) headers (space savings 0.00%), 99.66MB (104502320) data
+                     min         max         mean         sd        +/- sd
+time for request:        0us         0us         0us         0us     0.00%
+time for connect:        0us         0us         0us         0us     0.00%
+time to 1st byte:        0us         0us         0us         0us     0.00%
+req/s           :       0.00        0.00        0.00        0.00     0.00%
+starting benchmark...
+spawning thread #0: 50 total client(s). 50 total requests
+spawning thread #1: 50 total client(s). 50 total requests
+Application protocol: http/1.1
+
+finished in 2.04s, 0.00 req/s, 44.00MB/s
+requests: 100 total, 100 started, 0 done, 0 succeeded, 100 failed, 100 errored, 100 timeout
+status codes: 100 2xx, 0 3xx, 0 4xx, 0 5xx
+traffic: 89.59MB (93937552) total, 22.75KB (23300) headers (space savings 0.00%), 89.56MB (93908752) data
+                     min         max         mean         sd        +/- sd
+time for request:        0us         0us         0us         0us     0.00%
+time for connect:        0us         0us         0us         0us     0.00%
+time to 1st byte:        0us         0us         0us         0us     0.00%
+req/s           :       0.00        0.00        0.00        0.00     0.00%
+starting benchmark...
+spawning thread #0: 50 total client(s). 50 total requests
+spawning thread #1: 50 total client(s). 50 total requests
+Application protocol: http/1.1
+
+finished in 2.02s, 0.00 req/s, 61.46MB/s
+requests: 100 total, 100 started, 0 done, 0 succeeded, 100 failed, 100 errored, 100 timeout
+status codes: 100 2xx, 0 3xx, 0 4xx, 0 5xx
+traffic: 123.86MB (129878360) total, 22.75KB (23300) headers (space savings 0.00%), 123.83MB (129849560) data
+                     min         max         mean         sd        +/- sd
+time for request:        0us         0us         0us         0us     0.00%
+time for connect:        0us         0us         0us         0us     0.00%
+time to 1st byte:        0us         0us         0us         0us     0.00%
+req/s           :       0.00        0.00        0.00        0.00     0.00%
+starting benchmark...
+spawning thread #0: 50 total client(s). 50 total requests
+spawning thread #1: 50 total client(s). 50 total requests
+Application protocol: http/1.1
+
+finished in 2.01s, 0.00 req/s, 43.34MB/s
+requests: 100 total, 100 started, 0 done, 0 succeeded, 100 failed, 100 errored, 100 timeout
+status codes: 100 2xx, 0 3xx, 0 4xx, 0 5xx
+traffic: 87.01MB (91238480) total, 22.75KB (23300) headers (space savings 0.00%), 86.98MB (91209680) data
+                     min         max         mean         sd        +/- sd
+time for request:        0us         0us         0us         0us     0.00%
+time for connect:        0us         0us         0us         0us     0.00%
+time to 1st byte:        0us         0us         0us         0us     0.00%
+req/s           :       0.00        0.00        0.00        0.00     0.00%
+starting benchmark...
+spawning thread #0: 50 total client(s). 50 total requests
+spawning thread #1: 50 total client(s). 50 total requests
+Application protocol: http/1.1
+
+finished in 2.02s, 0.00 req/s, 37.23MB/s
+requests: 100 total, 100 started, 0 done, 0 succeeded, 100 failed, 100 errored, 100 timeout
+status codes: 100 2xx, 0 3xx, 0 4xx, 0 5xx
+traffic: 75.14MB (78794368) total, 22.75KB (23300) headers (space savings 0.00%), 75.12MB (78765568) data
+                     min         max         mean         sd        +/- sd
+time for request:        0us         0us         0us         0us     0.00%
+time for connect:        0us         0us         0us         0us     0.00%
+time to 1st byte:        0us         0us         0us         0us     0.00%
+req/s           :       0.00        0.00        0.00        0.00     0.00%
+starting benchmark...
+spawning thread #0: 50 total client(s). 50 total requests
+spawning thread #1: 50 total client(s). 50 total requests
+Application protocol: http/1.1
+
+finished in 2.01s, 0.00 req/s, 37.26MB/s
+requests: 100 total, 100 started, 0 done, 0 succeeded, 100 failed, 100 errored, 100 timeout
+status codes: 100 2xx, 0 3xx, 0 4xx, 0 5xx
+traffic: 74.97MB (78611920) total, 22.75KB (23300) headers (space savings 0.00%), 74.94MB (78583120) data
+                     min         max         mean         sd        +/- sd
+time for request:        0us         0us         0us         0us     0.00%
+time for connect:        0us         0us         0us         0us     0.00%
+time to 1st byte:        0us         0us         0us         0us     0.00%
+req/s           :       0.00        0.00        0.00        0.00     0.00%
+starting benchmark...
+spawning thread #0: 50 total client(s). 50 total requests
+spawning thread #1: 50 total client(s). 50 total requests
+Application protocol: http/1.1
+
+finished in 2.01s, 0.00 req/s, 37.65MB/s
+requests: 100 total, 100 started, 0 done, 0 succeeded, 100 failed, 100 errored, 100 timeout
+status codes: 100 2xx, 0 3xx, 0 4xx, 0 5xx
+traffic: 75.73MB (79408320) total, 22.75KB (23300) headers (space savings 0.00%), 75.70MB (79379520) data
+                     min         max         mean         sd        +/- sd
+time for request:        0us         0us         0us         0us     0.00%
+time for connect:        0us         0us         0us         0us     0.00%
+time to 1st byte:        0us         0us         0us         0us     0.00%
+req/s           :       0.00        0.00        0.00        0.00     0.00%
+starting benchmark...
+spawning thread #0: 50 total client(s). 50 total requests
+spawning thread #1: 50 total client(s). 50 total requests
+Application protocol: http/1.1
+
+finished in 2.01s, 0.00 req/s, 45.55MB/s
+requests: 100 total, 100 started, 0 done, 0 succeeded, 100 failed, 100 errored, 100 timeout
+status codes: 100 2xx, 0 3xx, 0 4xx, 0 5xx
+traffic: 91.55MB (96000952) total, 22.75KB (23300) headers (space savings 0.00%), 91.53MB (95972152) data
+                     min         max         mean         sd        +/- sd
+time for request:        0us         0us         0us         0us     0.00%
+time for connect:        0us         0us         0us         0us     0.00%
+time to 1st byte:        0us         0us         0us         0us     0.00%
+req/s           :       0.00        0.00        0.00        0.00     0.00%
+starting benchmark...
+spawning thread #0: 50 total client(s). 50 total requests
+spawning thread #1: 50 total client(s). 50 total requests
+Application protocol: http/1.1
+
+finished in 2.01s, 0.00 req/s, 47.34MB/s
+requests: 100 total, 100 started, 0 done, 0 succeeded, 100 failed, 100 errored, 100 timeout
+status codes: 100 2xx, 0 3xx, 0 4xx, 0 5xx
+traffic: 95.25MB (99872904) total, 22.75KB (23300) headers (space savings 0.00%), 95.22MB (99844104) data
+                     min         max         mean         sd        +/- sd
+time for request:        0us         0us         0us         0us     0.00%
+time for connect:        0us         0us         0us         0us     0.00%
+time to 1st byte:        0us         0us         0us         0us     0.00%
+req/s           :       0.00        0.00        0.00        0.00     0.00%
+starting benchmark...
+spawning thread #0: 50 total client(s). 50 total requests
+spawning thread #1: 50 total client(s). 50 total requests
+Application protocol: http/1.1
+
+finished in 2.02s, 0.00 req/s, 38.61MB/s
+requests: 100 total, 100 started, 0 done, 0 succeeded, 100 failed, 100 errored, 100 timeout
+status codes: 100 2xx, 0 3xx, 0 4xx, 0 5xx
+traffic: 78.11MB (81909016) total, 22.75KB (23300) headers (space savings 0.00%), 78.09MB (81880216) data
+                     min         max         mean         sd        +/- sd
+time for request:        0us         0us         0us         0us     0.00%
+time for connect:        0us         0us         0us         0us     0.00%
+time to 1st byte:        0us         0us         0us         0us     0.00%
+req/s           :       0.00        0.00        0.00        0.00     0.00%
+starting benchmark...
+spawning thread #0: 50 total client(s). 50 total requests
+spawning thread #1: 50 total client(s). 50 total requests
+Application protocol: http/1.1
+
+finished in 2.01s, 0.00 req/s, 37.55MB/s
+requests: 100 total, 100 started, 0 done, 0 succeeded, 100 failed, 100 errored, 100 timeout
+status codes: 100 2xx, 0 3xx, 0 4xx, 0 5xx
+traffic: 75.48MB (79141888) total, 22.75KB (23300) headers (space savings 0.00%), 75.45MB (79113088) data
+                     min         max         mean         sd        +/- sd
+time for request:        0us         0us         0us         0us     0.00%
+time for connect:        0us         0us         0us         0us     0.00%
+time to 1st byte:        0us         0us         0us         0us     0.00%
+req/s           :       0.00        0.00        0.00        0.00     0.00%
+starting benchmark...
+spawning thread #0: 50 total client(s). 50 total requests
+spawning thread #1: 50 total client(s). 50 total requests
+Application protocol: http/1.1
+
+finished in 2.01s, 0.00 req/s, 37.57MB/s
+requests: 100 total, 100 started, 0 done, 0 succeeded, 100 failed, 100 errored, 100 timeout
+status codes: 100 2xx, 0 3xx, 0 4xx, 0 5xx
+traffic: 75.51MB (79182432) total, 22.75KB (23300) headers (space savings 0.00%), 75.49MB (79153632) data
+                     min         max         mean         sd        +/- sd
+time for request:        0us         0us         0us         0us     0.00%
+time for connect:        0us         0us         0us         0us     0.00%
+time to 1st byte:        0us         0us         0us         0us     0.00%
+req/s           :       0.00        0.00        0.00        0.00     0.00%
+starting benchmark...
+spawning thread #0: 50 total client(s). 50 total requests
+spawning thread #1: 50 total client(s). 50 total requests
+Application protocol: http/1.1
+
+finished in 2.02s, 0.00 req/s, 59.65MB/s
+requests: 100 total, 100 started, 0 done, 0 succeeded, 100 failed, 100 errored, 100 timeout
+status codes: 100 2xx, 0 3xx, 0 4xx, 0 5xx
+traffic: 120.48MB (126336552) total, 22.75KB (23300) headers (space savings 0.00%), 120.46MB (126307752) data
+                     min         max         mean         sd        +/- sd
+time for request:        0us         0us         0us         0us     0.00%
+time for connect:        0us         0us         0us         0us     0.00%
+time to 1st byte:        0us         0us         0us         0us     0.00%
+req/s           :       0.00        0.00        0.00        0.00     0.00%
+starting benchmark...
+spawning thread #0: 50 total client(s). 50 total requests
+spawning thread #1: 50 total client(s). 50 total requests
+Application protocol: http/1.1
+progress: 10% done
+progress: 20% done
+progress: 30% done
+progress: 40% done
+progress: 50% done
+progress: 60% done
+progress: 70% done
+progress: 80% done
+progress: 90% done
+progress: 100% done
+
+finished in 1.32s, 75.82 req/s, 112.86MB/s
+requests: 100 total, 100 started, 100 done, 100 succeeded, 0 failed, 0 errored, 0 timeout
+status codes: 100 2xx, 0 3xx, 0 4xx, 0 5xx
+traffic: 148.86MB (156086400) total, 22.75KB (23300) headers (space savings 0.00%), 148.83MB (156057600) data
+                     min         max         mean         sd        +/- sd
+time for request:      1.02s       1.32s       1.20s     72.14ms    57.00%
+time for connect:      694us     21.20ms      8.74ms      7.85ms    62.00%
+time to 1st byte:     2.14ms     48.73ms     21.81ms     17.48ms    45.00%
+req/s           :       0.76        0.98        0.83        0.06    58.00%
+starting benchmark...
+spawning thread #0: 50 total client(s). 50 total requests
+spawning thread #1: 50 total client(s). 50 total requests
+Application protocol: http/1.1
+progress: 10% done
+progress: 20% done
+progress: 30% done
+progress: 40% done
+progress: 50% done
+progress: 60% done
+progress: 70% done
+progress: 80% done
+progress: 90% done
+progress: 100% done
+
+finished in 1.32s, 75.71 req/s, 112.69MB/s
+requests: 100 total, 100 started, 100 done, 100 succeeded, 0 failed, 0 errored, 0 timeout
+status codes: 100 2xx, 0 3xx, 0 4xx, 0 5xx
+traffic: 148.86MB (156086400) total, 22.75KB (23300) headers (space savings 0.00%), 148.83MB (156057600) data
+                     min         max         mean         sd        +/- sd
+time for request:      1.04s       1.32s       1.24s     61.78ms    71.00%
+time for connect:      760us      6.26ms      3.06ms      1.93ms    63.00%
+time to 1st byte:     1.70ms     21.02ms      9.50ms      5.59ms    64.00%
+req/s           :       0.76        0.96        0.81        0.04    77.00%
+starting benchmark...
+spawning thread #0: 50 total client(s). 50 total requests
+spawning thread #1: 50 total client(s). 50 total requests
+Application protocol: http/1.1
+progress: 10% done
+progress: 20% done
+progress: 30% done
+progress: 40% done
+progress: 50% done
+progress: 60% done
+progress: 70% done
+progress: 80% done
+progress: 90% done
+progress: 100% done
+
+finished in 1.29s, 77.61 req/s, 115.53MB/s
+requests: 100 total, 100 started, 100 done, 100 succeeded, 0 failed, 0 errored, 0 timeout
+status codes: 100 2xx, 0 3xx, 0 4xx, 0 5xx
+traffic: 148.86MB (156086400) total, 22.75KB (23300) headers (space savings 0.00%), 148.83MB (156057600) data
+                     min         max         mean         sd        +/- sd
+time for request:      1.02s       1.28s       1.19s     65.95ms    62.00%
+time for connect:      579us     10.85ms      3.50ms      3.04ms    88.00%
+time to 1st byte:     1.95ms     29.99ms     12.87ms      9.29ms    55.00%
+req/s           :       0.78        0.98        0.84        0.05    65.00%
