@@ -26,3 +26,48 @@ do
     sleep $time_launch
     kill -INT $!
 done
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+#!/bin/bash
+
+# Входной файл с данными
+input_file="data.txt"
+
+# Файл для записи результатов
+output_file="result.csv"
+
+# Поиск количества строк, в которых во втором столбце стоит 200
+count=$(awk '{ if ($2 == 200) count++ } END { print count }' $input_file)
+
+# Поиск минимального значения в третьем столбце
+min=$(awk 'NR == 1 { min = $3 } $3 < min { min = $3 } END { print min }' $input_file)
+
+# Поиск максимального значения в третьем столбце
+max=$(awk 'NR == 1 { max = $3 } $3 > max { max = $3 } END { print max }' $input_file)
+
+# Поиск среднего значения в третьем столбце
+sum=$(awk '{ sum += $3 } END { print sum }' $input_file)
+average=$(awk "BEGIN { print $sum / NR }")
+
+# Запись результатов в файл .csv
+echo "$count,$min,$max,$average" > $output_file
+
+
+
+
+
+
+
+
