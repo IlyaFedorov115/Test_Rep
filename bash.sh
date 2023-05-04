@@ -70,4 +70,38 @@ echo "$count,$min,$max,$average" > $output_file
 
 
 
+# Инициализация переменных
+count=0
+min=0
+max=0
+sum=0
+
+# Цикл по строкам входного файла
+while read -r col1 col2 col3; do
+  if [ $col2 -eq 200 ]; then
+    ((count++))
+  fi
+  if [ $col3 -lt $min ] || [ $count -eq 0 ]; then
+    min=$col3
+  fi
+  if [ $col3 -gt $max ]; then
+    max=$col3
+  fi
+  ((sum+=col3))
+done < "$input_file"
+
+# Поиск среднего значения в третьем столбце
+if [ $count -gt 0 ]; then
+  average=$(bc <<< "scale=2; $sum / $count")
+else
+  average=0
+fi
+
+# Запись результатов в файл .csv
+echo "$count,$min,$max,$average" > $output_file
+
+
+
+
+
 
