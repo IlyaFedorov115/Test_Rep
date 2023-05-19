@@ -29,7 +29,7 @@ def clean_work_space(pconfig):
     directory_path = './outs/' + pconfig.getVectorOfAttack()+"/"
     clean_directory(directory_path, extensions_to_delete)  
 
-def make_test(pconfig:cPlatformConfig, graph_show=True):
+def make_test(pconfig:cPlatformConfig):
     print(f"==========={pconfig.getVectorOfAttack().upper()}=============")
     print('Create machines...')
     print('Sleep before load machines...')
@@ -102,46 +102,59 @@ def make_test(pconfig:cPlatformConfig, graph_show=True):
         #firewall_thread.join()
         #lt_attacker.disconnect()
 
-    #graph drawing
-    #client_avg, success_count = client.parse_out()
+def plot_graph_method(pconfig:cPlatformConfig, graph_show):
     print('Start to draw...')
     graph = Graph(pconfig=pconfig)
-    graph.plot_method_graph(attacker.parse_out(), graph_show=graph_show)
-
-    #video graphs
+    graph.plot_method_graph(cAttacker.parse_out(pconfig=pconfig), graph_show=graph_show)
     if pconfig.getUseVideo():
         video_graph = VideoProcessor(pconfig)
         video_graph.process_analysis_videos(graph_show=graph_show)
-    #video_graph.made_demonstation()  
 
+def plot_inter_graph(pconfig:cPlatformConfig):
+    Graph.plot_inter_graph(pconfig=pconfig)
 
 def main():
     #parse arguments
     parser = argparse.ArgumentParser()
     parser.add_argument("-c", "--config", required=True, type=str, help = "Full path to platform_config.json")
+    parser.add_argument("-p", "--plot", required=False, action="store_true", 
+                        help="Plot graph from outs only. Without run tests.")
+    parser.add_argument("--clear", required=False, help="Clear outs log dir.")
     args = parser.parse_args()
     
     #init config and targets
     pconfig = cPlatformConfig(args.config)
     if pconfig.checkJson()==-1:
         raise SystemExit
+    
+    # only plot graph
+    if args.plot:
+        if pconfig.getVectorIsAll():
+            plot_inter_graph(pconfig)
+            for attack in pconfig.getSupportedVectors():
+                pconfig.setVectorAttack(attack)
+                plot_graph_method(pconfig, graph_show=False)
+        else:
+            plot_graph_method(pconfig, graph_show=True)
+    else: # run tests
+        firewall = cFirewall(pconfig.getSSHNetworkFirewall(), 
+                            admin_password=pconfig.getNetworkFirewallAdmin())
+        firewall.init_xf(pconfig.getFirewallSettings())
+        firewall.disconnect()
 
-    #ips on xf
-    firewall = cFirewall(pconfig.getSSHNetworkFirewall(), 
-                         admin_password=pconfig.getNetworkFirewallAdmin())
-    firewall.init_xf(pconfig.getFirewallSettings())
-    firewall.disconnect()
+        if pconfig.getVectorIsAll():
+            attacks = pconfig.getSupportedVectors()
+            for attack in attacks:
+                pconfig.setVectorAttack(attack)
+                if args.clear: clean_work_space(pconfig)        
+                make_test(pconfig)
+                plot_graph_method(pconfig, graph_show=False)
+            plot_inter_graph(pconfig)
+        else:
+            if args.clear: clean_work_space(pconfig)       
+            make_test(pconfig)
+            plot_graph_method(pconfig, graph_show=True)
 
-    if pconfig.getVectorIsAll():
-        attacks = pconfig.getSupportedVectors()
-        for attack in attacks:
-            pconfig.setVectorAttack(attack)
-            clean_work_space(pconfig)        
-            make_test(pconfig, graph_show=False)
-        #Graph.plot_inter_graph(pconfig=pconfig)
-    else:
-        clean_work_space(pconfig)        
-        make_test(pconfig, graph_show=True)
 
 if __name__ == '__main__':
     ToolsConsole.usage()

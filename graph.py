@@ -5,6 +5,7 @@ import os
 from platform_config import cPlatformConfig
 import pandas as pd
 from files_path import ClientPaths
+import client
 
 class Graph():
     def __init__(self,pconfig:cPlatformConfig) -> None:
@@ -67,85 +68,20 @@ class Graph():
         return f"Attack with '{pconfig.getVectorOfAttack()}' method. " + \
                f"Tests: {pconfig.getCountOfTests()}."
 
-    def _parse_out_all_csv(self, prefix)->pd.DataFrame:
-        '''
-        parse all csv in dir and return inter dataframe
-        '''
-        df = pd.DataFrame()
-        for i in range(1, int(self._cfg.getCountOfTests()) + 1):
-            file_name = ClientPaths.get_local_log_csv(self._cfg, prefix, i)
-            temp_df = pd.read_csv(file_name)
-            temp_df['test_num'] = i
-            df = pd.concat([df, temp_df])
-        df.reset_index(drop=True, inplace=True)
-        return df
-
-
-    def _is_row_valid(self, row):
-        if row.isnull().values.any():
-            return False
-        if row.isna().any():
-            return False
-        return True
-
-    def _fix_invalid_row1(self, row):
-        if row.isna().any():
-            row = row.fillna({'count': 0}).fillna(int(self._cfg.getTimeoutClient())*1e6)
-        if row.isnull().any():
-            row = row.replace({'count': np.nan}, 0).fillna(int(self._cfg.getTimeoutClient())*1e6)
-
-    def _fix_invalid_row(self, row):
-        if pd.isna(row['count']) or pd.isnull(row['count']) or isinstance(row['count'], str):
-            row['count'] = 0
-        for col in row.index.tolist():
-            if col != 'count' and (pd.isnull(row[col]) or isinstance(row[col], str)):
-                row[col] = int(self._cfg.getTimeoutClient())*1e6
-        return row
-
-    def fix_df(self, df):
-        for column in df.columns:
-            df[column] = pd.to_numeric(df[column], errors='coerce')
-        df = df.apply(self._fix_invalid_row, axis=1)
-        return df
-
-    def _parse_out_mean_csv(self, df, count_tests)->pd.DataFrame:
-        '''
-        get inter dataframe and return mean df
-        '''
-        result_df = df[df['test_num'] == 1]
-        df_means = pd.DataFrame(columns=result_df.columns)
-        for index, row in result_df.iterrows():
-            row = row.copy()
-            for i in range(2,count_tests+1):
-                add_row = df[df['test_num'] == i].reset_index(drop=True).loc[index]
-                #if not self._is_row_valid(add_row):
-                #    print(add_row)
-                #    add_row = self._fix_invalid_row(add_row)
-                #print("Row valid: ", self._is_row_valid(df[df['test_num'] == i].reset_index(drop=True).loc[index]))
-                #print(add_row)
-                row += add_row
-                #print(f"Summ {index} {i}\n", row)
-                #print("Next \n\t", df[df['test_num'] == i+1].reset_index(drop=True).loc[index])
-            df_means.loc[len(df_means)] = row / count_tests
-        df_means = df_means.drop('test_num', axis=1)
-        return df_means
 
     def _plot_method_h2load(self, gs:gridspec.GridSpec, fig:plt.figure):
         '''
         plot graph for one method
         '''
         pconfig = self._cfg
-        stats_dir = pconfig.getLoadLogDir()#'./'
-        work_dir = pconfig.getVectorOfAttack()#'udp'
         count_of_tests = int(pconfig.getCountOfTests())
         success_count = int(pconfig.getCountOfClient())
         time_launch = int(pconfig.getLaunchTime())
         
         def _get_data(prefix:str):
-            nonlocal stats_dir, work_dir, count_of_tests
-            sum_df = self._parse_out_all_csv(prefix)
-            sum_df = self.fix_df(sum_df)
-            mean_df = self._parse_out_mean_csv(sum_df, count_of_tests)
+            nonlocal count_of_tests
+            sum_df = client.cClient._parse_out_all_csv(pconfig, prefix)
+            mean_df = client.cClient._parse_out_mean_csv(sum_df, int(self._cfg.getCountOfTests()))
             return mean_df.rename(columns=lambda x: x.replace(' ', ''))
 
         def _plot(data:list, xlabel, ylabel, len_measured, label:list, gf_ind=[0,0]):
@@ -177,26 +113,36 @@ class Graph():
         _plot([mean_df_before['avg']/sec_coef, mean_df_after['avg']/sec_coef], 'Time launch (sec)', 'Avg req time (s)', 
               len(mean_df_before), ['before', 'after'] ,[3,0])
         
-
-    def plot_inter_graph(self):
-        pconfig = self._cfg
-        stats_dir = pconfig.getLoadLogDir()#'./'
-        work_dir = pconfig.getVectorOfAttack()#'udp'
-        count_of_tests = pconfig.getCountOfTests()
-        success_count = int(pconfig.getCountOfClient())
-        time_launch = int(pconfig.getLaunchTime())
-
-
+    @staticmethod
+    def plot_inter_graph(pconfig:cPlatformConfig):
+        if not pconfig.getVectorIsAll(): print('[WARNING] Config file don`t set use  all methods.')
+        success_count = int(pconfig.getCountOfClient())       
         list_methods = pconfig.getSupportedVectors()
         prefix = pconfig.getLoadLogPrefix()[1]
         attack_results = {}
         mean_values_dict = {}
         mean_values = []
-        count_of_tests = pconfig.getCountOfTests()
-        for work_dir in list_methods:
-            sum_df = self._parse_out_all_csv(os.path.join(work_dir, stats_dir, prefix), count_tests=count_of_tests)
-            mean_df = self._parse_out_mean_csv(sum_df, count_of_tests).rename(columns=lambda x: x.replace(' ', ''))
-            attack_results[work_dir] = mean_df
+
+
+        fig = plt.figure(figsize=(10,6), tight_layout=False)
+        gs = gridspec.GridSpec(1, 2)
+        #gs.set_height_ratios()
+        # pps, bps packet size graphs
+        titles = ['PPS', 'BPS, MB', 'Packet size, kB']
+        curr_data = [pps, bps, pckt_size]
+        for index, (title, data) in enumerate(zip(titles, curr_data)):
+            gr = fig.add_subplot(gs[index,1])
+            gr.plot(list_time, data)
+            gr.set_title(title)
+            gr.set_xlabel('t, sec', loc='right')
+            gr.grid()
+
+
+        for method in list_methods:
+            pconfig.setVectorAttack(method)
+            sum_df = client.cClient._parse_out_all_csv(pconfig=pconfig, prefix=prefix)
+            mean_df = client.cClient._parse_out_mean_csv(sum_df, int(pconfig.getCountOfTests()))
+            attack_results[method] = mean_df
         for key in attack_results.keys():
             mean_values_dict[key] = attack_results[key]['count'].mean()
             mean_values.append(attack_results[key]['count'].mean())

@@ -6,6 +6,8 @@ import pprint
 import re
 import os
 from files_path import ClientPaths
+import pandas as pd
+import numpy as np
 
 
 class cClient:
@@ -285,7 +287,51 @@ fi
         cmd += f'(kill $(cat {os.path.join(self._cfg.getClientWorkDir(), "h2load_pid")}))'
         self._trg.execute(cmd, check_exit_code=False)        
 
+    @staticmethod
+    def _parse_out_all_csv(pconfig:cPlatformConfig, prefix:str)->pd.DataFrame:
+        '''
+        parse all csv in dir and return inter dataframe
+        '''
+        df = pd.DataFrame()
+        for i in range(1, int(pconfig.getCountOfTests()) + 1):
+            file_name = ClientPaths.get_local_log_csv(pconfig, prefix, i)
+            temp_df = pd.read_csv(file_name)
+            temp_df['test_num'] = i
+            df = pd.concat([df, temp_df])
+        df.reset_index(drop=True, inplace=True)
+        df = fix_df(df, int(pconfig.getTimeoutClient()))
+        return df
 
+    @staticmethod
+    def _parse_out_mean_csv(df, count_tests:int)->pd.DataFrame:
+        '''
+        get inter dataframe and return mean df
+        '''
+        result_df = df[df['test_num'] == 1]
+        df_means = pd.DataFrame(columns=result_df.columns)
+        for index, row in result_df.iterrows():
+            row = row.copy()
+            for i in range(2,count_tests+1):
+                add_row = df[df['test_num'] == i].reset_index(drop=True).loc[index]
+                row += add_row
+            df_means.loc[len(df_means)] = row / count_tests
+        df_means = df_means.drop('test_num', axis=1)
+        return df_means
+
+def _fix_invalid_row(row, timeout_sec:int):
+    if pd.isna(row['count']) or pd.isnull(row['count']) or isinstance(row['count'], str):
+        row['count'] = 0
+    for col in row.index.tolist():
+        if col != 'count' and (pd.isnull(row[col]) or isinstance(row[col], str)):
+            row[col] = timeout_sec*1e6#int(self._cfg.getTimeoutClient())*1e6
+    return row
+
+def fix_df(df, timeout_sec:int):
+    for column in df.columns:
+        df[column] = pd.to_numeric(df[column], errors='coerce')
+    df = df.apply(_fix_invalid_row, axis=1, args=(timeout_sec,))
+    df = df.rename(columns=lambda x: x.replace(' ', ''))
+    return df
 
 
 def get_time(string):
