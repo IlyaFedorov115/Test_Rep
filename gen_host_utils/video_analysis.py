@@ -130,5 +130,3 @@ done
         with open(local_script_path, "w") as tmp_file:
             tmp_file.write(cmd)
         subprocess.run(['bash', "scripts/demonstation.sh", *args], check=True)
-
-

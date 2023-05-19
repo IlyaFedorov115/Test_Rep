@@ -6,7 +6,8 @@ sleep_time = {
     "load_sleep": 3,
     "enable_sleep": 5,
     "pwd_sleep": 3,
-    "service_sleep": 5
+    "service_sleep": 5,
+    "simple_wait": 2,
 }
 
 class cFirewall:
@@ -55,14 +56,36 @@ class cFirewall:
         print('Start ips on xf...')
         channel.send("service ips start\n")
 
-    def switch_ipc(self, on_ips:bool=True):
+    def init_xf(self, conf:dict):
+        on_ips = conf['firewall_ips'] == "true"
+        settings = conf['homenet_ip']
+        file_path = conf['homenet_conf_file']
         channel = self._connect()
+        self.switch_ipc(channel=channel, on_ips=on_ips)
+        self.configure_homenet(channel=channel, settings=settings, file_path=file_path)
+
+    def switch_ipc(self, channel, on_ips:bool=True):
         if on_ips:
             self._start_ips(channel)
         else:
             self._stop_ips(channel)
         time.sleep(sleep_time["service_sleep"]) 
+        self.log_terminal(channel)
 
+    def configure_homenet(self, channel, settings:list, file_path:str):
+        conf_str = ",".join([elem.replace("/", "\/") for elem in settings])
+        print(f"Configure homenet to {conf_str} ...")
+        channel.send('admin esc\n')
+        time.sleep(sleep_time['pwd_sleep'])
+        channel.send('Yes\n')
+        time.sleep(sleep_time['pwd_sleep'])
+        channel.send(self._admin_password+"\n")
+        time.sleep(sleep_time['pwd_sleep'])
+        self.log_terminal(channel)
+        print("Inside bash xf ...")  
+        channel.send(f"sed -i '/^ipvar HOME_NET/ {{ s/.*/ipvar HOME_NET {conf_str}/; }}' {file_path}\n")
+        print("Try execute " + f"sed -i '/^ipvar HOME_NET/ {{ s/.*/ipvar HOME_NET {conf_str}/; }}' {file_path}\n")
+        time.sleep(sleep_time['pwd_sleep'])   
 
     def disconnect(self):
         self._client.close()

@@ -31,18 +31,55 @@ class cPlatformConfig:
     
     def getRpc(self)->{}:
         return self._config["rpc"]
-    
-    def getCountOfClient(self)->{}:
-        return self._config["count_of_client"]
 
-    def getThreadsClient(self)->{}:
-        return self._config["threads_client"]
+    # h2load params
+    def _getUtilParam(self, name):
+        return self._config["load_testing"][name]
 
-    def getTimeoutClient(self)->{}:
-        return self._config["timeout_client"]
+    def getCountOfClient(self):
+        return self._getUtilParam("count_of_client")
+
+    def getThreadsClient(self):
+        return self._getUtilParam("threads_client")
+
+    def getTimeoutClient(self):
+        return self._getUtilParam("timeout_client")
 
     def getWebHtml(self)->{}:
-        return self._config["web_html"]
+        return self._getUtilParam("web_html")
+
+    def getaunchNumNormal(self):
+        return self._getUtilParam("num_launch_normal")
+
+    def getLaunchTime(self):
+        return self._getUtilParam("time_launch")
+
+    def getNumLaunchNormal(self):
+        return self._getUtilParam("num_launch_normal")  
+    
+    def getLoadLogPrefix(self):
+        return self._getUtilParam("log_file_prefix")  
+
+    def getLoadUtilPath(self):
+        return self._getUtilParam("util_path")     
+
+    def getLoadLogCsv(self):
+        return self._getUtilParam("csv_out") 
+    
+    def getLoadLogDir(self):
+        return self._getUtilParam("log_dir") 
+
+    def getLoadSaveInterLogs(self):
+        return self._getUtilParam("save_inter_logs").lower() == "yes"
+
+    def getClientWorkDir(self)->str:
+        return self._config["client_work_dir"]
+
+    def getUseVideo(self):
+        return self._config["use_video"].lower() == "yes"
+    
+    def getTimeOfVideo(self):
+        return int(self._config["time_of_video"])
 
     def getWorkDir(self)->str:
         wd=self._config["work_dir"]
@@ -55,7 +92,10 @@ class cPlatformConfig:
         if(len(wd)<8):
           raise
         return wd
-
+    
+    def getIsUseClone(self):
+        return self._config["use_clone"] == "true"
+    
     def getNetworkBindwith(self):
         return self._config["network_bandwith"]
     
@@ -82,8 +122,15 @@ class cPlatformConfig:
     def getNetworkHost(self, name):
         return self._config["network_config"][name]["work_host"]
     
+
+    def getFirewallSettings(self):
+        return self._config["xf_config"]
+    def _getFirewallSetting(self, name):
+        return self._config["xf_config"][name]
     def getUseFirewallIPS(self):
-        return self._config["firewall_ips"] == "true"
+        return self._getFirewallSetting("firewall_ips") == "true"
+    def getFirewallHomenet(self):
+        return self._getFirewallSetting("homenet_ips")
         
     #Attacker
     def getNetworkAttacker(self)->{}:
@@ -145,4 +192,3 @@ class cPlatformConfig:
         return self._config["video_processing_config"]["video_names"]
     def getVideoPortSndRcv(self):
         return self._config["video_processing_config"]["port_snd_rcv"]
-    

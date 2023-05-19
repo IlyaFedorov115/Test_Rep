@@ -5,10 +5,11 @@ from console import Methods
 import re
 
 class cAttacker:
-    def __init__(self,config:cPlatformConfig,target:LinuxTarget, count_exp):
+    def __init__(self,config:cPlatformConfig,target:LinuxTarget, count_exp, use_clone:bool):
         self._cfg = config
         self._trg = target
         self._count_exp = count_exp
+        self._use_clone = use_clone
 
     def init_script(self, ttl=200)->str:
         local_init_path=self._cfg.getWorkDir()+"scripts/attacker.sh"
@@ -18,13 +19,14 @@ class cAttacker:
         answer='#!/bin/bash\n'
         answer+="\nip r del "
         answer+=('.'.join(self._cfg.getNetworkAttackerHost().split('.')[:-1])) + ".0/24\n"
-        answer+="python3.10 "+self._cfg.getMhddosDir()+"start.py " 
+        answer+="python3 "+self._cfg.getMhddosDir()+"start.py " 
         answer+=self._cfg.getVectorOfAttack()+" "+self._cfg.getSpoofing()+" "
         if (self._cfg.getPortOfAttack() == "80"):
             answer+="http://"
         elif (self._cfg.getPortOfAttack() == "443"):
             answer+="https://"
-        answer+=self._cfg.getNetworkWebAttackHost()+":"+self._cfg.getPortOfAttack()+" "
+        attacked_web = self._cfg.getNetworkWebAttackHost() if self._use_clone else self._cfg.getNetworkWebHost()
+        answer+=attacked_web+":"+self._cfg.getPortOfAttack()+" "
         if (self._cfg.getVectorOfAttack().lower() in Methods.LAYER7_METHODS):
             answer+=self._cfg.getRpc()+" "
         answer+=self._cfg.getTimeOfAttack() + " " + self._cfg.getNetworkBindwith() + " "  + self._cfg.getSpoofing() + " \n" #" true\n"
@@ -43,7 +45,7 @@ class cAttacker:
         while not test_before_attack.is_set():
             continue
 
-        cmd="sudo nohup bash "+self._cfg.getMhddosDir()+'attacker.sh'+" > "+self._cfg.getMhddosDir()+"attacker_log_"+str(self._count_exp)+".txt &"
+        cmd="nohup bash "+self._cfg.getMhddosDir()+'attacker.sh'+" > "+self._cfg.getMhddosDir()+"attacker_log_"+str(self._count_exp)+".txt &"
         print(cmd)
         print("Attack is started")
         attack_started.set()
@@ -56,7 +58,6 @@ class cAttacker:
         #print("Attacker: sleeping 60 sec. Waiting rebooting of machine...")
         #time.sleep(60)
         
-
     def parse_out(self):
         avg_dict = dict()
         avg_dict.update({'time': []})
@@ -94,30 +95,7 @@ class cAttacker:
         print(print("Average from attacker: \n", avg_dict))
         return avg_dict
             
-            
-
-def get_pps_old(string):
-    index_pps = string.find("PPS: ")
-    if index_pps > 0:
-        index_comma = string.find(",", index_pps)
-        pps = string[index_pps+len("PPS: "):index_comma-1]
-        if pps == '':
-            pps = '0.0'
-        return pps
-
-
-
-def get_bps_old(string):
-    index_bps = string.find("BPS: ")
-    if index_bps > 0:
-        index_slash = string.find("/", index_bps)
-        bps = string[index_bps+len("BPS: "):index_slash-4]
-        if bps == '-':
-            return '0.0'
-        if (string[index_slash-3] == "k"):
-            return str(float(bps) / 1000)
-        return bps
-
+        
 def get_pps(string):
     pps_pattern = r"PPS: (\d*\.?\d+)([kmg]?)"
     pps_value, pps_unit = re.search(pps_pattern, string).groups()
@@ -125,7 +103,6 @@ def get_pps(string):
     return float(pps_value) * UNITS[pps_unit]
 
 def get_bps(string):
-    # Используем регулярное выражение для извлечения значения BPS и его единицы измерения
     pattern = r'BPS: (--|\d+\.\d+) ([KMG]?B) / (\d+)%'
     UNITS = {
     'B': 1/1024/1024,

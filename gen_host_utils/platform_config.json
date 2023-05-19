@@ -4,68 +4,86 @@
 		"attacker": 
 		{
 			"ssh_settings": {
-				"host":"192.168.50.1",
-				"username":"kali",
-				"password":"kali"
+				"host":"192.168.40.106",
+				"username":"root",
+				"password":"1"
 			},
 			"work_host": "192.168.50.1"
 	    },
 		"web":
 		{
 			"ssh_settings": {
-				"host":"192.168.56.77",
+				"host":"192.168.40.206",
 				"username":"root",
-				"password":"11111111"
+				"password":"1"
 			},
 			"work_host": "192.168.56.77"
 		},
 		"web_attack":
 		{
 			"ssh_settings": {
-				"host":"192.168.56.77",
+				"host":"192.168.40.108",
 				"username":"root",
-				"password":"11111111"
+				"password":"1"
 			},
-			"work_host": "192.168.56.77"
+			"work_host": "192.168.56.78"
 		},
 		"client":
 		{
 			"ssh_settings": {
-				"host":"192.168.56.200",
+				"host":"192.168.40.107",
 				"username":"root",
-				"password":"11111111"
+				"password":"1"
 			},
 			"work_host": "192.168.56.200"
 		},
 		"firewall":
 		{
 			"ssh_settings": {
-				"host":"192.168.56.101",
+				"host":"192.168.40.109",
 				"username":"user",
-				"password":"11111111"
+				"password":"54304851"
 			},
 			"work_host": "192.168.56.101",
 			"admin_password": "aaaaaaaa"
 		}
 	},
-	"ssh_timeout": "500",
-	"firewall_ips": "false",
-	"network_bandwith": "1000",
-	"warm_up_time": "10",
-	"count_of_tests":"1",
+	"ssh_timeout": "3500",
+	"use_clone": "true",
+	"network_bandwith": "1600",
+	"warm_up_time": "150",
+	"count_of_tests":"10",
 	"time_of_attack":"80",
+	"use_video": "no",
+	"time_of_video": "32",
 	"vector_of_attack":"all",
 	"port_of_attack":"80",
 	"spoofing":"true",
 	"rpc":"10",
-	"count_of_client":"100",
-	"threads_client":"2",
-	"timeout_client":"2",
-	"web_html":"1,5MB.html",
-	"work_dir":"/home/kali/Git_project/ngfw/other/dos_utils/gen_host_utils/",
-	"mhddos_dir":"/home/kali/MHDDoS/",
-	"supported_vectors": [ "udp", "tcp", "syn", "dns", "icmp", "connection", "get", "post", "dyn", "bot", "pps", "null"],
-  "video_processing_config": 
+	"load_testing": {
+		"count_of_client":"100",
+		"threads_client":"2",
+		"timeout_client":"10",
+		"web_html":"1,5MB.html",
+		"num_launch_normal": "5",
+		"time_launch": "10",
+		"log_file_prefix": ["Log_before_", "Log_during_", "Log_after_"],
+		"util_path": "h2load",
+		"csv_out": "log_h2load",
+		"save_inter_logs": "no",
+		"log_dir": "outs"
+	},
+	"xf_config": {
+		"firewall_ips": "true",
+		"homenet_ip": ["192.168.0.0/16", "10.0.0.0/8", "172.16.0.0/12"],
+		"homenet_conf_file": "/etc/snort/ids_variables.conf"
+	},
+	"work_dir":"/home/kali/Dos_Progs/ngfw/other/dos_utils/gen_host_utils/",
+	"mhddos_dir":"/home/user/ngfw/other/dos_utils/attacker_utils/",
+	"client_work_dir": "/home/user/",
+	"supported_vectors": [ "tcp", "syn", "udp", "dns", "get", "post"], 
+	"supported_vectors_": [ "tcp", "syn", "udp", "dns", "icmp", "connection", "get", "post", "dyn", "bot", "pps", "null"],  
+	"video_processing_config": 
   {
     "orig_video": "video.mp4",
     "format_2_save": "mkv",
@@ -73,6 +91,6 @@
     "local_work_dir": "out_videos/",
     "remote_work_dir": "/home/user/save_videos/",
     "video_names": ["video_before_attack", "video_during_attack", "video_after_attack"],
-	"port_snd_rcv": 1234
+	"port_snd_rcv": "1234"
   }
 }
